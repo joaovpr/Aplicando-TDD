@@ -38,6 +38,8 @@ public class Funcionario {
         return salarioBase;
     }
 
+    // Calcula salários liquidos de acordo com as regras passadas.
+
     public double getSalarioLiquido() {
         if (this.cargo.equals("DESENVOLVEDOR")){
             if (this.salarioBase >= 3000){
