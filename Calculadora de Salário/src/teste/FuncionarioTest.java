@@ -46,8 +46,8 @@ class FuncionarioTest {
 
     @Test
     void assertSalarioLiquidoDba() {
-        Assertions.assertEquals(2240.2, this.funcionario3.getSalarioLiquido());     // DBA com salário maior ou igual a 2000
-        Assertions.assertEquals(1331.9, this.funcionario4.getSalarioLiquido());     // DBA com salário menor que 2000
+        Assertions.assertEquals(2240.25, this.funcionario3.getSalarioLiquido());     // DBA com salário maior ou igual a 2000
+        Assertions.assertEquals(1331.95, this.funcionario4.getSalarioLiquido());     // DBA com salário menor que 2000
     }
 
 }
