@@ -1,10 +1,10 @@
 package funcao;
 
-public class Aplicacao {
+public class Funcionario {
 
     private boolean funciona;
 
-    public Aplicacao(){
+    public Funcionario(){
         this.funciona = true;
     }
 
@@ -12,3 +12,4 @@ public class Aplicacao {
         return funciona;
     }
 }
+
