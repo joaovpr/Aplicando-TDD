@@ -38,6 +38,18 @@ public class Funcionario {
         return salarioBase;
     }
 
+    public double getSalarioLiquido() {
+        if (this.cargo.equals("DESENVOLVEDOR")){
+            if (this.salarioBase >= 3000){
+                return salarioBase - (salarioBase*0.2);
+            }else{
+                return salarioBase - (salarioBase*0.1);
+            }
+        }else{
+            return salarioBase;
+        }
+    }
+
     public boolean getFunciona() {
         return funciona;
     }

@@ -13,8 +13,8 @@ class FuncionarioTest {
 
     @BeforeEach
     void beforeTest(){
-        this.funcionario1 = new Funcionario("Mike Wazowski","mike.wazowski@ccc.ufcg.edu.br","Desenvolvedor",4567);
-        this.funcionario2 = new Funcionario("James P. Sullivan","james.sullivan@ccc.ufcg.edu.br","Desenvolvedor",2459);
+        this.funcionario1 = new Funcionario("Mike Wazowski","mike.wazowski@ccc.ufcg.edu.br","DESENVOLVEDOR",4567);
+        this.funcionario2 = new Funcionario("James P. Sullivan","james.sullivan@ccc.ufcg.edu.br","DESENVOLVEDOR",2459);
     }
 
     @Test
@@ -36,8 +36,8 @@ class FuncionarioTest {
 
     @Test
     void assertSalarioLiquidoDesenvolvedor() {
-        Assertions.assertEquals(3653.6,this.funcionario1.calculaLiquido());
-        Assertions.assertEquals(1967.2, this.funcionario2.getSalarioLiquido());
+        Assertions.assertEquals(3653.6, this.funcionario1.getSalarioLiquido());
+        Assertions.assertEquals(2213.1, this.funcionario2.getSalarioLiquido());
     }
-    
+
 }
