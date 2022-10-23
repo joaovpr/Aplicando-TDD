@@ -21,8 +21,8 @@ class FuncionarioTest {
         this.funcionario2 = new Funcionario("James P. Sullivan","james.sullivan@ccc.ufcg.edu.br","DESENVOLVEDOR",2459);
         this.funcionario3 = new Funcionario("George Sanderson","george.sanderson@ccc.ufcg.edu.br","DBA",2987);
         this.funcionario4 = new Funcionario("Celia Mae","celia.mae@ccc.ufcg.edu.br","DBA",1567);
-        this.funcionario3 = new Funcionario("Randall Boggs","randall.boggs@ccc.ufcg.edu.br","TESTADOR",3000);
-        this.funcionario4 = new Funcionario("pete claws ward","pete.ward@ccc.ufcg.edu.br","TESTADOR",1899);
+        this.funcionario5 = new Funcionario("Randall Boggs","randall.boggs@ccc.ufcg.edu.br","TESTADOR",3000);
+        this.funcionario6 = new Funcionario("pete claws ward","pete.ward@ccc.ufcg.edu.br","TESTADOR",1899);
     }
 
     @Test
@@ -40,7 +40,7 @@ class FuncionarioTest {
     void assertSalarioBaseTest() {Assertions.assertEquals(4567,this.funcionario1.getSalarioBase());}
 
     @Test
-    void assertCargo() {Assertions.assertEquals("Desenvolvedor", this.funcionario1.getCargo());}
+    void assertCargo() {Assertions.assertEquals("DESENVOLVEDOR", this.funcionario1.getCargo());}
 
     @Test
     void assertSalarioLiquidoDesenvolvedor() {
@@ -56,8 +56,8 @@ class FuncionarioTest {
 
     @Test
     void assertSalarioLiquidoTestador() {
-        Assertions.assertEquals(2250, this.funcionario3.getSalarioLiquido());     // Testador com salário maior ou igual a 2000
-        Assertions.assertEquals(1614.15, this.funcionario4.getSalarioLiquido());     // Testador com salário menor que 2000
+        Assertions.assertEquals(2250, this.funcionario5.getSalarioLiquido());         // Testador com salário maior ou igual a 2000
+        Assertions.assertEquals(1614.15, this.funcionario6.getSalarioLiquido());     // Testador com salário menor que 2000
     }
 
 }

@@ -45,7 +45,7 @@ public class Funcionario {
             }else{
                 return salarioBase - (salarioBase*0.1);
             }
-        }else if(this.cargo.equals(("DBA"))){
+        }else if(this.cargo.equals(("DBA")) || this.cargo.equals("TESTADOR")){
             if (this.salarioBase >= 2000){
                 return salarioBase - (salarioBase*0.25);
             }else{
