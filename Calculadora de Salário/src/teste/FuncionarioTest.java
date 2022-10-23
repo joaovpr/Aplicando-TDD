@@ -14,6 +14,8 @@ class FuncionarioTest {
     private Funcionario funcionario4;
     private Funcionario funcionario5;
     private Funcionario funcionario6;
+    private Funcionario funcionario7;
+    private Funcionario funcionario8;
 
     @BeforeEach
     void beforeTest(){
@@ -22,7 +24,9 @@ class FuncionarioTest {
         this.funcionario3 = new Funcionario("George Sanderson","george.sanderson@ccc.ufcg.edu.br","DBA",2987);
         this.funcionario4 = new Funcionario("Celia Mae","celia.mae@ccc.ufcg.edu.br","DBA",1567);
         this.funcionario5 = new Funcionario("Randall Boggs","randall.boggs@ccc.ufcg.edu.br","TESTADOR",3000);
-        this.funcionario6 = new Funcionario("pete claws ward","pete.ward@ccc.ufcg.edu.br","TESTADOR",1899);
+        this.funcionario6 = new Funcionario("Pete claws ward","pete.ward@ccc.ufcg.edu.br","TESTADOR",1899);
+        this.funcionario7 = new Funcionario("Henry J. P. Waternoose","henry.waternoose@ccc.ufcg.edu.br","GERENTE",15000);
+        this.funcionario8 = new Funcionario("Dean Hardscrabble","dean.hardscrabble@ccc.ufcg.edu.br","GERENTE",4900);
     }
 
     @Test
@@ -60,4 +64,9 @@ class FuncionarioTest {
         Assertions.assertEquals(1614.15, this.funcionario6.getSalarioLiquido());     // Testador com salário menor que 2000
     }
 
+    @Test
+    void assertSalarioLiquidoGerente() {
+        Assertions.assertEquals(10500, this.funcionario7.getSalarioLiquido());         // Gerente com salário maior ou igual a 5000
+        Assertions.assertEquals(3920, this.funcionario8.getSalarioLiquido());         // Gerente com salário menor que 5000
+    }
 }
