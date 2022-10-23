@@ -28,12 +28,7 @@ class FuncionarioTest {
         this.funcionario7 = new Funcionario("Henry J. P. Waternoose","henry.waternoose@ccc.ufcg.edu.br","GERENTE",15000);
         this.funcionario8 = new Funcionario("Dean Hardscrabble","dean.hardscrabble@ccc.ufcg.edu.br","GERENTE",4900);
     }
-
-    @Test
-    void testeTest(){
-        Assertions.assertTrue(this.funcionario1.getFunciona());
-    }
-
+    
     @Test
     void assertNomeTest() {Assertions.assertEquals("Mike Wazowski", this.funcionario1.getNome());}
 

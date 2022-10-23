@@ -2,8 +2,6 @@ package funcao;
 
 public class Funcionario {
 
-    private boolean funciona;
-
     private String nome;
 
     private String email;
@@ -14,7 +12,6 @@ public class Funcionario {
 
 
     public Funcionario(String nome, String email, String cargo, double salarioBase){
-        this.funciona = true;
         this.nome = nome;
         this.email = email;
         this.cargo = cargo;
@@ -53,11 +50,13 @@ public class Funcionario {
             }else{
                 return salarioBase - (salarioBase*0.15);
             }
-        }else{return salarioBase;}
-    }
-
-    public boolean getFunciona() {
-        return funciona;
+        }else if(this.cargo.equals("GERENTE")){
+            if (this.salarioBase >= 5000){
+                return salarioBase - (salarioBase*0.3);
+            }else{
+                return salarioBase - (salarioBase*0.2);
+            }
+        }else {return salarioBase;}
     }
 }
 
