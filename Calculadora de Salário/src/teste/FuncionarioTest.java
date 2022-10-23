@@ -8,27 +8,36 @@ import org.junit.jupiter.api.Test;
 
 class FuncionarioTest {
 
-    private Funcionario Funcionario1;
+    private Funcionario funcionario1;
+    private Funcionario funcionario2;
 
     @BeforeEach
     void beforeTest(){
-        this.Funcionario1 = new Funcionario("Mike Wazowski","mike.wazowski@ccc.ufcg.edu.br","Desenvolvedor",4567);
+        this.funcionario1 = new Funcionario("Mike Wazowski","mike.wazowski@ccc.ufcg.edu.br","Desenvolvedor",4567);
+        this.funcionario2 = new Funcionario("James P. Sullivan","james.sullivan@ccc.ufcg.edu.br","Desenvolvedor",2459);
     }
 
     @Test
     void testeTest(){
-        Assertions.assertTrue(this.Funcionario1.getFunciona());
+        Assertions.assertTrue(this.funcionario1.getFunciona());
     }
 
     @Test
-    void assertNomeTest() {Assertions.assertEquals("Mike Wazowski", this.Funcionario1.getNome());}
+    void assertNomeTest() {Assertions.assertEquals("Mike Wazowski", this.funcionario1.getNome());}
 
     @Test
-    void assertEmailTest() {Assertions.assertEquals("mike.wazowski@ccc.ufcg.edu.br", this.Funcionario1.getEmail());}
+    void assertEmailTest() {Assertions.assertEquals("mike.wazowski@ccc.ufcg.edu.br", this.funcionario1.getEmail());}
 
     @Test
-    void assertSalarioBaseTest() {Assertions.assertEquals(4567,this.Funcionario1.getSalarioBase());}
+    void assertSalarioBaseTest() {Assertions.assertEquals(4567,this.funcionario1.getSalarioBase());}
 
     @Test
-    void assertCargo() {Assertions.assertEquals("Desenvolvedor", this.Funcionario1.getCargo());}
+    void assertCargo() {Assertions.assertEquals("Desenvolvedor", this.funcionario1.getCargo());}
+
+    @Test
+    void assertSalarioLiquidoDesenvolvedor() {
+        Assertions.assertEquals(3653.6,this.funcionario1.calculaLiquido());
+        Assertions.assertEquals(1967.2, this.funcionario2.getSalarioLiquido());
+    }
+    
 }
