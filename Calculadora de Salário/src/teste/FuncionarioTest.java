@@ -12,6 +12,8 @@ class FuncionarioTest {
     private Funcionario funcionario2;
     private Funcionario funcionario3;
     private Funcionario funcionario4;
+    private Funcionario funcionario5;
+    private Funcionario funcionario6;
 
     @BeforeEach
     void beforeTest(){
@@ -19,6 +21,8 @@ class FuncionarioTest {
         this.funcionario2 = new Funcionario("James P. Sullivan","james.sullivan@ccc.ufcg.edu.br","DESENVOLVEDOR",2459);
         this.funcionario3 = new Funcionario("George Sanderson","george.sanderson@ccc.ufcg.edu.br","DBA",2987);
         this.funcionario4 = new Funcionario("Celia Mae","celia.mae@ccc.ufcg.edu.br","DBA",1567);
+        this.funcionario3 = new Funcionario("Randall Boggs","randall.boggs@ccc.ufcg.edu.br","TESTADOR",3000);
+        this.funcionario4 = new Funcionario("pete claws ward","pete.ward@ccc.ufcg.edu.br","TESTADOR",1899);
     }
 
     @Test
@@ -48,6 +52,12 @@ class FuncionarioTest {
     void assertSalarioLiquidoDba() {
         Assertions.assertEquals(2240.25, this.funcionario3.getSalarioLiquido());     // DBA com salário maior ou igual a 2000
         Assertions.assertEquals(1331.95, this.funcionario4.getSalarioLiquido());     // DBA com salário menor que 2000
+    }
+
+    @Test
+    void assertSalarioLiquidoTestador() {
+        Assertions.assertEquals(2250, this.funcionario3.getSalarioLiquido());     // Testador com salário maior ou igual a 2000
+        Assertions.assertEquals(1614.15, this.funcionario4.getSalarioLiquido());     // Testador com salário menor que 2000
     }
 
 }
