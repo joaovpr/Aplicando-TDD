@@ -1,7 +1,6 @@
 package teste;
 
 import funcao.Fatura;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
