@@ -1,2 +1,7 @@
 # Ignore tests outputs.
 out/
+
+# Ignore .idea folder
+.idea
+Calculadora de Salário/.idea
+Filtro de Faturas/.idea
