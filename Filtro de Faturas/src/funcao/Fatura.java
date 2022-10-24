@@ -10,7 +10,13 @@ public class Fatura {
 
     private String cliente;
 
-    public Fatura(String codigo, double valor, String data, String cliente) {
+    public Fatura(String codigo, double valor, String data, String cliente) throws Exception {
+        if(codigo == null || data == null || cliente == null){
+            throw new Exception("Variable can't be null");
+        }
+        else if(valor < 0 ){
+            throw new Exception("Valor can't be negative");
+        }
         this.codigo = codigo;
         this.valor = valor;
         this.data = data;

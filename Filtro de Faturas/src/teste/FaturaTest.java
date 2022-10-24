@@ -11,7 +11,7 @@ class FaturaTest {
     private Fatura faturaAttributesTest;
 
     @BeforeEach
-    void beforeTest() {
+    void beforeTest() throws Exception {
         this.faturaAttributesTest = new Fatura("123", 20.0, "23/10/2022", "Arthur");
     }
 
