@@ -1,5 +1,8 @@
 package funcao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 public class Fatura {
 
     private String codigo;
@@ -17,10 +20,21 @@ public class Fatura {
         else if(valor < 0 ){
             throw new Exception("Valor can't be negative");
         }
+        verifyValidDate(data);
         this.codigo = codigo;
         this.valor = valor;
         this.data = data;
         this.cliente = cliente;
+    }
+
+    private void verifyValidDate(String data) throws Exception {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            sdf.setLenient(false);
+            sdf.parse(data);
+        } catch (ParseException ex) {
+            throw new Exception("Data inválida");
+        }
     }
 
     public String getCodigo() {
