@@ -1,5 +1,6 @@
 package teste;
 
+import funcao.Cliente;
 import funcao.Fatura;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +13,8 @@ class FaturaTest {
 
     @BeforeEach
     void beforeTest() throws Exception {
-        this.faturaAttributesTest = new Fatura("123", 20.0, "23/10/2022", "Arthur");
+        Cliente cliente = new Cliente("Arthur", "23/10/2022", "Paraiba");
+        this.faturaAttributesTest = new Fatura("123", 20.0, "23/10/2022", cliente);
     }
 
     @Test
@@ -24,17 +26,17 @@ class FaturaTest {
 
         // Validações de Atributos
         try {
-            this.faturaAttributesTest = new Fatura(null, 20.0, "23/10/2022", "Arthur");
+            this.faturaAttributesTest = new Fatura(null, 20.0, "23/10/2022", this.faturaAttributesTest.getCliente());
         } catch (Exception e) {
             Assertions.assertEquals(e.getMessage(), "Variable can't be null");
         }
         try {
-            this.faturaAttributesTest = new Fatura("123", -1, "23/10/2022", "Arthur");
+            this.faturaAttributesTest = new Fatura("123", -1, "23/10/2022", this.faturaAttributesTest.getCliente());
         } catch (Exception e) {
             Assertions.assertEquals(e.getMessage(), "Valor can't be negative");
         }
         try {
-            this.faturaAttributesTest = new Fatura("123", 20.0, null, "Arthur");
+            this.faturaAttributesTest = new Fatura("123", 20.0, null, this.faturaAttributesTest.getCliente());
         } catch (Exception e) {
             Assertions.assertEquals(e.getMessage(), "Variable can't be null");
         }

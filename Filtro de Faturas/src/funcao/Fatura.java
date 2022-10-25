@@ -8,9 +8,9 @@ public class Fatura {
 
     private String data;
 
-    private String cliente;
+    private Cliente cliente;
 
-    public Fatura(String codigo, double valor, String data, String cliente) throws Exception {
+    public Fatura(String codigo, double valor, String data, Cliente cliente) throws Exception {
         if(codigo == null || data == null || cliente == null){
             throw new Exception("Variable can't be null");
         }
@@ -35,7 +35,7 @@ public class Fatura {
         return data;
     }
 
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 }
