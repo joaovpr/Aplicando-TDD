@@ -52,4 +52,14 @@ public class Fatura {
     public Cliente getCliente() {
         return cliente;
     }
+
+    @Override
+    public String toString() {
+        return "Fatura{" +
+                "codigo='" + codigo + '\'' +
+                ", valor=" + valor +
+                ", data='" + data + '\'' +
+                ", cliente=" + cliente +
+                '}';
+    }
 }
