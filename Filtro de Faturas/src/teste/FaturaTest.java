@@ -46,6 +46,11 @@ class FaturaTest {
             Assertions.assertEquals(e.getMessage(), "Variable can't be null");
         }
 
-
+        // Verifica data inválida
+        try{
+            this.faturaAttributesTest = new Fatura("123", 20.0, "31/02/2016",  this.faturaAttributesTest.getCliente()   );
+        } catch (Exception e) {
+            Assertions.assertEquals(e.getMessage(), "Data inválida");
+        }
     }
 }
